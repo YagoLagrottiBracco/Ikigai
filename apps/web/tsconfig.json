@@ -24,6 +24,9 @@
         "paths": {
             "@/*": [
                 "./src/*"
+            ],
+            "@ikigai/shared": [
+                "../../packages/shared/src/index.ts"
             ]
         }
     },
