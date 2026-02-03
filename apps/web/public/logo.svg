@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <!-- Gradients for each circle -->
+    <radialGradient id="pink" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#FF6B9D" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#FF6B9D" stop-opacity="0.4"/>
+    </radialGradient>
+    <radialGradient id="teal" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4ECDC4" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#4ECDC4" stop-opacity="0.4"/>
+    </radialGradient>
+    <radialGradient id="blue" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#45B7D1" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#45B7D1" stop-opacity="0.4"/>
+    </radialGradient>
+    <radialGradient id="gold" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#F7B731" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#F7B731" stop-opacity="0.4"/>
+    </radialGradient>
+    <!-- Center glow -->
+    <radialGradient id="center" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#D946EF"/>
+      <stop offset="70%" stop-color="#9D4EDD"/>
+      <stop offset="100%" stop-color="#7C3AED" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Star shape filter -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background (optional - remove for transparent) -->
+  <!-- <rect width="200" height="200" fill="#0A0A0B"/> -->
+  
+  <!-- Four overlapping circles -->
+  <circle cx="75" cy="75" r="55" fill="url(#pink)" style="mix-blend-mode: screen"/>
+  <circle cx="125" cy="75" r="55" fill="url(#teal)" style="mix-blend-mode: screen"/>
+  <circle cx="75" cy="125" r="55" fill="url(#gold)" style="mix-blend-mode: screen"/>
+  <circle cx="125" cy="125" r="55" fill="url(#blue)" style="mix-blend-mode: screen"/>
+  
+  <!-- Center star/diamond shape -->
+  <path 
+    d="M100 70 Q110 90 130 100 Q110 110 100 130 Q90 110 70 100 Q90 90 100 70Z" 
+    fill="url(#center)" 
+    filter="url(#glow)"
+  />
+</svg>
