@@ -10,14 +10,20 @@ async function bootstrap() {
     const port = configService.get<number>('API_PORT') || 3001;
 
     // CORS
+    const allowedOrigins = [
+        'http://localhost:3000',
+        'https://florir.online',
+        'https://www.florir.online',
+        process.env.FRONTEND_URL,
+    ].filter((url): url is string => Boolean(url));
+
     app.enableCors({
-        origin: [
-            'http://localhost:3000',
-            process.env.FRONTEND_URL,
-        ].filter((url): url is string => Boolean(url)),
+        origin: allowedOrigins,
         methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
         credentials: true,
     });
+
+    console.log('Allowed Origins:', allowedOrigins);
 
     // Global prefix
     app.setGlobalPrefix('api');
