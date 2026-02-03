@@ -22,9 +22,6 @@
             ],
             "@presentation/*": [
                 "src/presentation/*"
-            ],
-            "@ikigai/shared": [
-                "../../packages/shared/src/index.ts"
             ]
         },
         "emitDecoratorMetadata": true,
